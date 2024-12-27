@@ -1,0 +1,171 @@
+<mvc:View
+    controllerName="ui5onpremise.ui5onpremise.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="CRUD App"
+    >
+        <content>
+            <!-- Asset Management Table -->
+            <VBox class="sapUiSmallMargin">
+                <Title text="Asset Management Table" />
+                <Button
+                    id="btnAddNewAsset"
+                    text="Add New Asset"
+                    press=".onAddNew"
+                    class="sapUiTinyMarginBottom"
+                />
+                <Table
+                    id="tblAssets"
+                    items="{table>/}"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="Asset Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Service Centre Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Custodian Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Actions" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{table>AssetName}" />
+                                <Text text="{table>ServiceCentreName}" />
+                                <Text text="{table>CustodianName}" />
+                                <HBox class="sapUiTinyMargin">
+                                    <Button
+                                        id="btnEditAsset"
+                                        text="Edit"
+                                        press=".onEdit"
+                                    />
+                                    <Button
+                                        id="btnDeleteAsset"
+                                        text="Delete"
+                                        press=".onDelete"
+                                        class="sapUiTinyMarginBegin"
+                                        type="Reject"
+                                    />
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+
+            <!-- Employee Detail Table -->
+            <VBox class="sapUiSmallMargin">
+                <Title text="Employee Detail Table" />
+                <Button
+                    id="btnAddNewSalesOrder"
+                    text="Add New Employee Detail"
+                    press=".onAddNew2"
+                    class="sapUiTinyMarginBottom"
+                />
+                <Table
+                    id="tblEmployeeDetails"
+                    items="{table2>/}"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Age" />
+                        </Column>
+                        <Column>
+                            <Text text="Email" />
+                        </Column>
+                        <Column>
+                            <Text text="Actions" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{table2>Name}" />
+                                <Text text="{table2>Age}" />
+                                <Text text="{table2>Email}" />
+                                <HBox class="sapUiTinyMargin">
+                                    <Button
+                                        id="btnEditSalesOrder"
+                                        text="Edit"
+                                        press=".onEdit2"
+                                    />
+                                    <Button
+                                        id="btnDeleteSalesOrder"
+                                        text="Delete"
+                                        press=".onDelete2"
+                                        class="sapUiTinyMarginBegin"
+                                        type="Reject"
+                                    />
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+
+            <!-- Invoices Table -->
+            <VBox class="sapUiSmallMargin">
+                <Title text="Invoices Table" />
+                <Button
+                    id="btnAddNewInvoice"
+                    text="Add New Invoice"
+                    press=".onAddNew3"
+                    class="sapUiTinyMarginBottom"
+                />
+                <Table
+                    id="tblInvoices"
+                    items="{table3>/}"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="Customer Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Amount" />
+                        </Column>
+                        <Column>
+                            <Text text="Status" />
+                        </Column>
+                        <Column>
+                            <Text text="Actions" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{table3>customer}" />
+                                <Text text="{table3>total_amount}" />
+                                <Text text="{table3>status}" />
+                                <HBox class="sapUiTinyMargin">
+                                    <Button
+                                        id="btnEditInvoice"
+                                        text="Edit"
+                                        press=".onEdit3"
+                                    />
+                                    <Button
+                                        id="btnDeleteInvoice"
+                                        text="Delete"
+                                        press=".onDelete3"
+                                        class="sapUiTinyMarginBegin"
+                                        type="Reject"
+                                    />
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

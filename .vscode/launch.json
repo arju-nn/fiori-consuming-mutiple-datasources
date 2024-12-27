@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ui5-onpremise-config1",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "index.html"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/ui5-onpremise\"}",
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/odata\",\"url\":\"https://5e3b3a6dtrial-dev-invoice-app-srv.cfapps.us10-001.hana.ondemand.com\",\"destination\":\"invoice_capm\",\"authenticationType\":\"OAuth2UserTokenExchange\"}]",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+      }
+    }
+  ]
+}

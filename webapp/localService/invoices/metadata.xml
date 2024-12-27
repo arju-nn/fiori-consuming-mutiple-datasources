@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="Invoices" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Invoice" EntityType="Invoices.Invoice"/>
+                <EntitySet Name="ProductInvoices" EntityType="Invoices.ProductInvoices"/>
+            </EntityContainer>
+            <EntityType Name="Invoice">
+                <Key>
+                    <PropertyRef Name="invoice_id"/>
+                </Key>
+                <Property Name="invoice_id" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="created_date" Type="Edm.Date"/>
+                <Property Name="customer" Type="Edm.String" MaxLength="50"/>
+                <Property Name="total_amount" Type="Edm.Decimal" Precision="15" Scale="2"/>
+                <Property Name="status" Type="Edm.String" MaxLength="50"/>
+            </EntityType>
+            <EntityType Name="ProductInvoices">
+                <Key>
+                    <PropertyRef Name="invoice_id"/>
+                    <PropertyRef Name="sno"/>
+                </Key>
+                <Property Name="invoice_id" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="sno" Type="Edm.String" MaxLength="50" Nullable="false"/>
+                <Property Name="bill_no" Type="Edm.String" MaxLength="50"/>
+                <Property Name="product_name" Type="Edm.String" MaxLength="50"/>
+                <Property Name="qty" Type="Edm.String" MaxLength="50"/>
+                <Property Name="uom" Type="Edm.String" MaxLength="50"/>
+                <Property Name="rate" Type="Edm.Decimal" Precision="15" Scale="2"/>
+                <Property Name="amount" Type="Edm.Decimal" Precision="15" Scale="2"/>
+            </EntityType>
+            <Annotations Target="Invoices.Invoice/invoice_id">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="Invoices.ProductInvoices/invoice_id">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
